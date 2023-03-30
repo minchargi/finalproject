@@ -5,6 +5,8 @@ import sign_up as su
 
 class Login:
    def __init__(self, root):      
+      f = open("account.txt", "a")
+      f.close()
       self.login = root
       self.login.title('Login')
       self.login.configure(bg="#fff")
