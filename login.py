@@ -26,8 +26,13 @@ class Login:
    def do_log_in(self):
       user = self.User_box.get()
       password = self.Password_box.get()
-      with open("account.txt", 'r') as f:
-         account = json.loads(f.read())
+      try: 
+         with open("account.txt", 'r') as f:
+            account = json.loads(f.read())
+      except:
+         messagebox.showwarning("showinfo", "Invalide user")
+         return
+      
       if user not in account:
          messagebox.showwarning("showinfo", "Invalide user")
       elif account[user] == password:

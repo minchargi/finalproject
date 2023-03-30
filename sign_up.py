@@ -40,7 +40,9 @@ class Sign_up:
         except:
             with open("account.txt", 'w') as w:
                 w.write(json.dumps({user:password}))
-            account = json.loads(f.read())
+            messagebox.showwarning("showinfo", "Success")
+            return
+
 
         if user in account:
             messagebox.showwarning("showinfo", "Exist user")
